@@ -22,6 +22,31 @@ This website will allow for the generation of map / area ideas.  The user decide
 
 **API:**
 
+``` JSON
+{
+            "id": "recfr9L2NsCuuFMRT",
+            "fields": {
+                "Area": "Woods",
+                "POI 30x30": [
+                    "Copse",
+                    "Thick Brush",
+                    "Animal Trails"
+                ],
+                "POI 60x60": [
+                    "Boulders",
+                    "Fruit Trees"
+                ],
+                "POI 90x90": [
+                    "Cabin",
+                    "Clearing",
+                    "Small Lake",
+                    "Old Massive Tree(s)"
+                ],
+                "Field 6": "With,\nCommas,\nIn,\nThis,\nOne"
+            },
+            "createdTime": "2020-09-03T13:18:16.000Z"
+            
+```
 I plan on having at minimum two tables, one for storing finished generated locations as samples as well as another table to contain the generator options/attributes.
 
 **MVP:** 
