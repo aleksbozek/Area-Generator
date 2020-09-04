@@ -5,6 +5,12 @@
 This website will allow for the generation of map / area ideas.  The user decides what type of environment they wish to generate as well as how large of an area.  This will provide them with a rough guideline.  There will also be input fields for the user to add their own unique flavor into the random gen in case they have a theme to maintain.  Suitable for a broad creative audience seeking inspiration; from writers to digital artists!
 
 **Wireframes:**
+
+-Home Page
+-Build Page
+-Gallery Page(s)
+-Dedicated/Individual Area/ Unique
+
 ![Home Page](https://i.imgur.com/Ewq6Dm8.png)
 ![Build Page](https://i.imgur.com/33aC8ED.png)
 ![Gallery](https://i.imgur.com/L92CUeX.png)
