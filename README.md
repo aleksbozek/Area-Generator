@@ -52,15 +52,14 @@ I plan on having at minimum two tables, one for storing finished generated locat
 **MVP:** 
 
 - Display random finished gens on home page
-- Ability to add and remove options in dropdown menus
 - Maintain entries added to dropdown menus to it's area
 - Populate dropdown menu options from airtable
 - Three area sizes
 - Populate attribute dropdown menu based on area type
-- 2nd dropdown menu for # of attributes to generate per 30x30 section
 
 **Post-MVP:** 
 
+- Ability to add and remove options in dropdown menus
 - Able to make a new build using existing one as a template
 - Unique/Individual page will have pictures
 - Additional default sizes, as well as oblong (rectangular) sizes
