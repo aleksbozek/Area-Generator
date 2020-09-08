@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import BuildOptions from "./BuildOptions.jsx";
 
 export default function BuildPage() {
   const [build, setBuild] = useState([]);
@@ -24,6 +25,12 @@ export default function BuildPage() {
   return (
     <div>
       <p>This'll contain the main event.</p>
+      <BuildOptions
+        desert={build[0]}
+        woods={build[1]}
+        urban={build[2]}
+        ocean={build[3]}
+      />
     </div>
   );
 }

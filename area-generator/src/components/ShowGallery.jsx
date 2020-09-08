@@ -8,15 +8,11 @@ export default function ShowGallery(props) {
 
   return (
     <div>
-      <h5>
-        Area Style: <h6>{Type}</h6>
-      </h5>
-      <h5>
-        Size of Area: <h6>{Size}</h6>
-      </h5>
-      <h5>
-        Descriptive Keywords : <h6>{AssignedAttributes}</h6>
-      </h5>
+      <h5>Area Style: </h5>
+      <h6>{Type}</h6>
+      <h5>Size of Area: </h5>
+      <h6>{Size}</h6>
+      <h5>Descriptive Keywords :</h5> <h6>{AssignedAttributes}</h6>
       <h5>Made :</h5>
       <h6>{timestamp}</h6>
       <br />
