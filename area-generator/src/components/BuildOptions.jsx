@@ -9,7 +9,7 @@ export default function BuildOptions(props) {
   return (
     <main>
       stuff and things
-      <form class="selector">
+      <form className="selector">
         <select
           name="area-type"
           id="area-type"

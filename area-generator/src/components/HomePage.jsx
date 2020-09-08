@@ -23,18 +23,37 @@ export default function HomePage() {
   }, []);
 
   function getRandom() {
-    return Math.floor(Math.random() * examples.length);
+    const index = Math.floor(Math.random() * examples.length);
+
+    return index;
   }
 
   const showExamples = (ex) => {
-    getRandom();
+    const index = getRandom();
     console.log(ex);
+    let sample = {
+      size: "",
+      type: "",
+      att: "",
+    };
+    sample.size = ex[index].fields.Size;
+    sample.type = ex[index].fields.Type;
+    sample.att = ex[index].fields.AssignedAttributes;
+    return sample;
   };
+
+  // let sample = showExamples(examples);
 
   return (
     <div>
-      {/* <h3>{examples.records[0].Type}</h3> */}
       Stuff will go here
+      <h2>Sample From Gallery</h2>
+      <h4>Type: </h4>
+      {/* <h1>{sample.type}</h1> */}
+      <h4>Size: </h4>
+      {/* <h1>{sample.size}</h1> */}
+      <h5>Points Of Interest: </h5>
+      {/* <h1>{sample.att}</h1> */}
     </div>
   );
 }
