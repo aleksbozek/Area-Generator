@@ -13,7 +13,7 @@ export default function BuildOptions(props) {
         <select
           name="area-type"
           id="area-type"
-          onSelect={(e) => setArea(e.target.value)}
+          onChange={(e) => setArea(e.target.value)}
         >
           <option value="">Area Type</option>
           <option value="Desert">Desert</option>
@@ -25,7 +25,7 @@ export default function BuildOptions(props) {
         <select
           name="area-size"
           id="area-size"
-          onSelect={(e) => setSize(e.target.value)}
+          onChange={(e) => setSize(e.target.value)}
         >
           <option value="">Size</option>
           <option value="30x30">30x30</option>

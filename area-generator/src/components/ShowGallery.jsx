@@ -12,7 +12,8 @@ export default function ShowGallery(props) {
       <h6>{Type}</h6>
       <h5>Size of Area: </h5>
       <h6>{Size}</h6>
-      <h5>Descriptive Keywords :</h5> <h6>{AssignedAttributes}</h6>
+      <h5>Points Of Interest :</h5>
+      <h6>{AssignedAttributes}</h6>
       <h5>Made :</h5>
       <h6>{timestamp}</h6>
       <br />
