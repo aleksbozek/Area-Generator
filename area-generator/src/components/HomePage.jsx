@@ -15,10 +15,10 @@ export default function HomePage() {
         },
       });
 
-      console.log(res.data);
+      console.log(res.data.records);
       setExamples(res.data.records);
     };
-    // getInfo();
+    getInfo();
     console.log("mounted successfully");
   }, []);
 
