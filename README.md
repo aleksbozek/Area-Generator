@@ -18,7 +18,7 @@ This website will allow for the generation of map / area ideas.  The user decide
 
 **Component Hierarchy:**
 
-![Spiderweb](https://i.imgur.com/2UsGU71.png)
+![Spiderweb](https://i.imgur.com/bENgSpu.png)
 
 **API:**
 
@@ -74,5 +74,3 @@ I plan on having at minimum two tables, one for storing finished generated locat
 Well, I'll be referencing & attempting to replicate code I've made in the past.  So that's a plus.  
 
 I'll have to remember that populating the options for the build page aught to come last.  Code first!  Details, css, information fluff : afterburner.
-
-My greatest hurdle will most likely come in the part of attaching appropriate attributes with the area selected.  I'll probably overcome this by discovering the code I avoided in P1 : populating days dropdown menu based on the month selected.
