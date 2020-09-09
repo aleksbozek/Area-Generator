@@ -5,7 +5,7 @@ export default function BuildOptions(props) {
   const [area, setArea] = useState("");
   const [size, setSize] = useState("");
 
-  console.log(props);
+  // console.log(props);
   return (
     <main>
       stuff and things

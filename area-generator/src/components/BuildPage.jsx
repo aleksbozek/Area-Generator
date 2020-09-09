@@ -14,8 +14,6 @@ export default function BuildPage() {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
       });
-
-      console.log(res.data.records);
       setBuild(res.data.records);
     };
     getInfo();
