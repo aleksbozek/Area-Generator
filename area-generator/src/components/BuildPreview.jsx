@@ -7,62 +7,60 @@ export default function BuildPreview(props) {
   let poi = [];
 
   useEffect(() => {
-    const runSize = (s) => {
-      if (s === 0) {
+    const runSize = () => {
+      if (size === "default") {
         console.log(`size is undefined`);
       } else {
-        if (s === "30x30") {
-          console.log(`30`);
-        } else if (s === "60x60") {
-          console.log(`60`);
-        } else if (s === "90x90") {
-          console.log(`90`);
-        }
+        runArea();
       }
     };
-    runSize(size);
-  }, [size]);
+    runSize();
+  }, [size, area]);
 
-  useEffect(() => {
-    const runArea = (a) => {
-      if (a === 0) {
-        console.log(`area is undefined`);
-      } else {
-        if (a === "desert") {
-          if (size === 0) {
-            console.log(`size is undefined`);
-          } else {
-            if (size === "30x30") {
-              setOptions(desert.fields.thirty);
-            } else if (size === "60x60") {
-              poi = desert.fields.thirty;
-              poi.push(desert.fields.sixty);
-              poi = poi.flat(1);
-              setOptions(poi);
-            } else if (size === "90x90") {
-              poi = desert.fields.thirty;
-              poi.push(desert.fields.sixty);
-              poi.push(desert.fields.ninety);
-              poi = poi.flat(1);
-              setOptions(poi);
-            }
+  const runArea = () => {
+    poi = [];
+    setOptions([]);
+    if (area === "default") {
+      console.log(`area is undefined`);
+    } else if (size === "default") {
+      console.log(`size is undefined`);
+    } else {
+      if (area === "desert") {
+        setOptions(desert);
+        if (size === "default") {
+          console.log(`size is undefined`);
+        } else {
+          if (size === "30x30") {
+            setOptions(desert.fields.thirty);
+          } else if (size === "60x60") {
+            poi = desert.fields.thirty;
+            poi.push(desert.fields.sixty);
+            poi = poi.flat(1);
+            setOptions(poi);
+          } else if (size === "90x90") {
+            poi = desert.fields.thirty;
+            poi.push(desert.fields.sixty);
+            poi.push(desert.fields.ninety);
+            poi = poi.flat(1);
+            setOptions(poi);
           }
-          // console.log(`point of interest = ${options}`);
-        } else if (a === "woods") {
-          setOptions(woods);
-          // console.log(`point of interest = ${options}`);
-        } else if (a === "urban") {
-          setOptions(urban);
-          // console.log(`point of interest = ${options}`);
-        } else if (a === "ocean") {
-          setOptions(ocean);
-          // console.log(`point of interest = ${options}`);
         }
+      } else if (area === "woods") {
+        setOptions(woods);
+      } else if (area === "urban") {
+        setOptions(urban);
+      } else if (area === "ocean") {
+        setOptions(ocean);
       }
-    };
-    runArea(area);
-    console.log(`point of interest = ${options}`);
-  }, [area]);
+    }
+    console.log(options);
+  };
+  // useEffect(() => {
+  //   runArea(area);
+  //   console.log(`point of interest = ${options}`);
+  // }, [area]);
+  //------------
+  // let num = 1
   //   function myFunction() {
   //   var x = document.getElementById("mySelect");
   //   var c = document.createElement("option");

@@ -22,25 +22,25 @@ export default function HomePage() {
     console.log("mounted successfully");
   }, []);
 
-  function getRandom() {
-    const index = Math.floor(Math.random() * examples.length);
+  // function getRandom() {
+  //   const index = Math.floor(Math.random() * examples.length);
 
-    return index;
-  }
+  //   return index;
+  // }
 
-  const showExamples = (ex) => {
-    const index = getRandom();
-    console.log(ex);
-    let sample = {
-      size: "",
-      type: "",
-      att: "",
-    };
-    sample.size = ex[index].fields.Size;
-    sample.type = ex[index].fields.Type;
-    sample.att = ex[index].fields.AssignedAttributes;
-    return sample;
-  };
+  // const showExamples = (ex) => {
+  //   const index = getRandom();
+  //   console.log(ex);
+  //   let sample = {
+  //     size: "",
+  //     type: "",
+  //     att: "",
+  //   };
+  //   sample.size = ex[index].fields.Size;
+  //   sample.type = ex[index].fields.Type;
+  //   sample.att = ex[index].fields.AssignedAttributes;
+  //   return sample;
+  // };
 
   // let sample = showExamples(examples);
 
