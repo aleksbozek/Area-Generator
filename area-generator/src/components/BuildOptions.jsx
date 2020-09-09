@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BuildResult from "./BuildResult.jsx";
+import BuildPreview from "./BuildPreview.jsx";
 
 export default function BuildOptions(props) {
   const [area, setArea] = useState("");
@@ -15,11 +15,11 @@ export default function BuildOptions(props) {
           id="area-type"
           onChange={(e) => setArea(e.target.value)}
         >
-          <option value="">Area Type</option>
-          <option value="Desert">Desert</option>
-          <option value="Woods">Woods</option>
-          <option value="Urban">Urban</option>
-          <option value="Ocean">Ocean</option>
+          <option value="0">Area Type</option>
+          <option value="desert">Desert</option>
+          <option value="woods">Woods</option>
+          <option value="urban">Urban</option>
+          <option value="ocean">Ocean</option>
         </select>
 
         <select
@@ -27,13 +27,20 @@ export default function BuildOptions(props) {
           id="area-size"
           onChange={(e) => setSize(e.target.value)}
         >
-          <option value="">Size</option>
+          <option value="0">Size</option>
           <option value="30x30">30x30</option>
           <option value="60x60">60x60</option>
           <option value="90x90">90x90</option>
         </select>
       </form>
-      <BuildResult area={area} size={size} />
+      <BuildPreview
+        area={area}
+        size={size}
+        desert={props.desert}
+        woods={props.woods}
+        urban={props.urban}
+        ocean={props.ocean}
+      />
     </main>
   );
 }

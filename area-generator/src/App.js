@@ -8,6 +8,7 @@ import { Link, Route, Switch, Redirect } from "react-router-dom";
 function App() {
   return (
     <div className="App">
+      <h1>Area Generator</h1>
       <nav>
         <Link to="/">Home</Link>
         <Link to="/Build">Build</Link>
