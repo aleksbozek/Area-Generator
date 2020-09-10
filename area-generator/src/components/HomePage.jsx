@@ -5,7 +5,7 @@ import "../App.css";
 
 export default function HomePage() {
   const [examples, setExamples] = useState([]);
-  const [idx, setIdx] = useState(0);
+  let idx = 0;
   useEffect(() => {
     // const airURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/Build?Grid%20View`
     const airURL = `https://api.airtable.com/v0/appT8SRRw9eOl8WmR/Gallery?Grid%20View`;
@@ -16,27 +16,19 @@ export default function HomePage() {
         },
       });
 
-      console.log(res.data.records);
       setExamples(res.data.records);
-      console.log(examples);
-      // grabSample();
+      grabSample(res.data.records);
     };
     getInfo();
-    // console.log("mounted successfully");
     console.log(examples);
   }, []);
-
-  useEffect(() => {
+  const grabSample = async (ex) => {
+    console.log(ex);
+    idx = Math.floor(Math.random() * ex.length);
+    console.log(idx);
     console.log(examples);
-    const grabSample = async () => {
-      console.log(examples);
-      setIdx(Math.floor(Math.random() * examples.length));
-      console.log(idx);
-      // console.log(examples[idx]);
-    };
-    grabSample(examples);
-  }, [examples]);
-
+  };
+  console.log(examples);
   return (
     <div>
       Grab example from HomePageSample

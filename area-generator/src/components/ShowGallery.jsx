@@ -1,12 +1,13 @@
 import React from "react";
 
 export default function ShowGallery(props) {
-  const { Type, AssignedAttributes, Size } = props.preview.fields;
+  const { Type, AssignedAttributes, Size, Title } = props.preview.fields;
   const timestamp = props.preview.createdTime;
   console.log(props);
 
   return (
     <div>
+      <h4>{Title}</h4>
       <h5>Area Style: </h5>
       <h6>{Type}</h6>
       <h5>Size of Area: </h5>

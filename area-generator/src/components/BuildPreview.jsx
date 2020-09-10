@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import CreateBuild from "./CreateBuild.jsx";
 
 export default function BuildPreview(props) {
   // console.log(props);
   const { area, size, desert, woods, urban, ocean } = props;
   const [options, setOptions] = useState([]);
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     const runSize = () => {
@@ -82,6 +84,21 @@ export default function BuildPreview(props) {
       {options.map((options) => (
         <h5>{options}</h5>
       ))}
+      <form>
+        <label htmlFor="title">Title:</label>
+        <input
+          name="title"
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+      </form>
+      <CreateBuild
+        AssignedAttributes={options}
+        Type={area}
+        Size={size}
+        Title={title}
+      />
     </article>
   );
 }
