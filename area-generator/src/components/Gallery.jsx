@@ -4,8 +4,7 @@ import ShowGallery from "./ShowGallery.jsx";
 
 export default function Gallery() {
   const [gallery, setGallery] = useState([]);
-  const [fetchGallery, setFetchGallery] = useState(false);
-
+  let galCount = 1;
   useEffect(() => {
     console.log("component has mounted");
     const airURL = `https://api.airtable.com/v0/appT8SRRw9eOl8WmR/Gallery?Grid%20View`;
@@ -18,22 +17,23 @@ export default function Gallery() {
       setGallery(res.data.records);
     };
     getGallery();
-  }, [fetchGallery]);
+  }, []);
 
   return (
     <div>
       <div>
-        <h4>This'll display the areas already made.</h4>
-        <p>Use frylife reviews as an example of how to do this.</p>
+        <h3>Locations made in the past.</h3>
       </div>
       <div className="review-container">
         {gallery.map((preview) => (
-          <ShowGallery
-            preview={preview}
-            key={preview.id}
-            fetchGallery={fetchGallery}
-            setFetchGallery={setFetchGallery}
-          />
+          <>
+            <h4>#{galCount++}</h4>
+            <ShowGallery
+              preview={preview}
+              key={preview.id}
+              galCount={galCount}
+            />
+          </>
         ))}
       </div>
     </div>

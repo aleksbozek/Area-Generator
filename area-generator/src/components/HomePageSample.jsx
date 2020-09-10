@@ -6,25 +6,27 @@
 //     type: "",
 //     att: "",
 //   };
-//   let examples = props.list;
+//   console.log(props);
+//   let examples = {
+//     fields: {
+//       Size: "",
+//       Type: "",
+//       AssignedAttributes: "",
+//     },
+//   };
+//   let idx = props.index;
 
 //   useEffect(() => {
 //     console.log(examples);
-
-//     function getRandom() {
-//       const index = Math.floor(Math.random() * props.list.length);
-//       console.log(examples);
-//       return index;
-//     }
-
-//     const showExamples = async () => {
+//     examples = props.list;
+//     const showExamples = () => {
 //       setTimeout(() => {
-//         const index = getRandom();
 //         console.log(examples);
-//         console.log(index);
-//         sample.size = examples[index].fields.Size;
-//         sample.type = props.list[index].fields.Type;
-//         sample.att = props.list[index].fields.AssignedAttributes;
+//         console.log(idx);
+//         console.log(props);
+//         sample.size = props.list[idx].fields.Size;
+//         sample.type = props.list[idx].fields.Type;
+//         sample.att = props.list[idx].fields.AssignedAttributes;
 //         return sample;
 //       }, 2000);
 //     };
@@ -36,11 +38,11 @@
 //     <div>
 //       <h2>Sample From Gallery</h2>
 //       <h4>Type: </h4>
-//       <h5>{sample.type}</h5>
+//       {/* <h5>{sample.type}</h5> */}
 //       <h4>Size: </h4>
-//       <h5>{sample.size}</h5>
+//       {/* <h5>{sample.size}</h5> */}
 //       <h4>Points Of Interest: </h4>
-//       <h6>{sample.att}</h6>
+//       {/* <h6>{sample.att}</h6> */}
 //     </div>
 //   );
 // }

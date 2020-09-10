@@ -5,13 +5,7 @@ import "../App.css";
 
 export default function HomePage() {
   const [examples, setExamples] = useState([]);
-  let idx = 0;
-  let sample = {
-    size: "",
-    type: "",
-    att: "",
-  };
-
+  const [idx, setIdx] = useState(0);
   useEffect(() => {
     // const airURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/Build?Grid%20View`
     const airURL = `https://api.airtable.com/v0/appT8SRRw9eOl8WmR/Gallery?Grid%20View`;
@@ -25,6 +19,7 @@ export default function HomePage() {
       console.log(res.data.records);
       setExamples(res.data.records);
       console.log(examples);
+      // grabSample();
     };
     getInfo();
     // console.log("mounted successfully");
@@ -33,15 +28,11 @@ export default function HomePage() {
 
   useEffect(() => {
     console.log(examples);
-    const grabSample = async (ex) => {
-      console.log(ex);
-      idx = Math.floor(Math.random() * ex.length);
+    const grabSample = async () => {
+      console.log(examples);
+      setIdx(Math.floor(Math.random() * examples.length));
       console.log(idx);
-      console.log(examples[idx]);
-      // sample.size = examples[idx].fields.Size;
-      // sample.type = examples[idx].fields.Type;
-      // sample.att = examples[idx].fields.AssignedAttributes;
-      console.log(sample);
+      // console.log(examples[idx]);
     };
     grabSample(examples);
   }, [examples]);
@@ -54,7 +45,7 @@ export default function HomePage() {
       <br />
       add a random gen to grab one as an example.
       <br />
-      {/* <HomePageSample list={examples} /> */}
+      {/* <HomePageSample list={examples} index={idx} /> */}
     </div>
   );
 }

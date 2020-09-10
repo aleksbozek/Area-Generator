@@ -72,10 +72,6 @@ export default function BuildPreview(props) {
       }
     }
   };
-  // useEffect(() => {
-  //   runArea(area);
-  //   console.log(`point of interest = ${options}`);
-  // }, [area]);
 
   return (
     <article>
@@ -83,11 +79,9 @@ export default function BuildPreview(props) {
         Area: {area} | Size: {size}
       </h3>
       <h4>Points of Interest Possibilities:</h4>
-      <h5>
-        {options.map((options) => (
-          <h6>{options}</h6>
-        ))}
-      </h5>
+      {options.map((options) => (
+        <h5>{options}</h5>
+      ))}
     </article>
   );
 }

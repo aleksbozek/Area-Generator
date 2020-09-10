@@ -3,7 +3,6 @@ import React from "react";
 export default function ShowGallery(props) {
   const { Type, AssignedAttributes, Size } = props.preview.fields;
   const timestamp = props.preview.createdTime;
-
   console.log(props);
 
   return (
@@ -16,6 +15,7 @@ export default function ShowGallery(props) {
       <h6>{AssignedAttributes}</h6>
       <h5>Made :</h5>
       <h6>{timestamp}</h6>
+      <br />
       <br />
     </div>
   );
