@@ -4,7 +4,6 @@ export default function BuildPreview(props) {
   // console.log(props);
   const { area, size, desert, woods, urban, ocean } = props;
   const [options, setOptions] = useState([]);
-  let poi = [];
 
   useEffect(() => {
     const runSize = () => {
@@ -18,44 +17,60 @@ export default function BuildPreview(props) {
   }, [size, area]);
 
   const runArea = () => {
-    poi = [];
     setOptions([]);
     if (area === "" || area === 0) {
       console.log(`area is undefined`);
     } else {
       if (area === "desert") {
-        if (size === "" || size === 0) {
-          console.log(`size is undefined`);
-        } else {
-          if (size === "30x30") {
-            setOptions(desert.fields.thirty);
-          } else if (size === "60x60") {
-            poi = desert.fields.thirty;
-            poi.push(desert.fields.sixty);
-            poi = poi.flat(1);
-            setOptions(poi);
-            // setOptions(desert.fields.sixty);
-          } else if (size === "90x90") {
-            poi = desert.fields.thirty;
-            poi.push(desert.fields.sixty);
-            poi.push(desert.fields.ninety);
-            poi = poi.flat(1);
-            setOptions(poi);
-            // setOptions(desert.fields.ninety);
-          }
+        if (size === "30x30") {
+          setOptions(desert.fields.thirty);
+        } else if (size === "60x60") {
+          setOptions([...desert.fields.thirty, ...desert.fields.sixty]);
+        } else if (size === "90x90") {
+          setOptions([
+            ...desert.fields.thirty,
+            ...desert.fields.sixty,
+            ...desert.fields.ninety,
+          ]);
         }
       } else if (area === "woods") {
-        setOptions(woods);
+        if (size === "30x30") {
+          setOptions(woods.fields.thirty);
+        } else if (size === "60x60") {
+          setOptions([...woods.fields.thirty, ...woods.fields.sixty]);
+        } else if (size === "90x90") {
+          setOptions([
+            ...woods.fields.thirty,
+            ...woods.fields.sixty,
+            ...woods.fields.ninety,
+          ]);
+        }
       } else if (area === "urban") {
-        setOptions(urban);
+        if (size === "30x30") {
+          setOptions(urban.fields.thirty);
+        } else if (size === "60x60") {
+          setOptions([...urban.fields.thirty, ...urban.fields.sixty]);
+        } else if (size === "90x90") {
+          setOptions([
+            ...urban.fields.thirty,
+            ...urban.fields.sixty,
+            ...urban.fields.ninety,
+          ]);
+        }
       } else if (area === "ocean") {
-        setOptions(ocean);
+        if (size === "30x30") {
+          setOptions(ocean.fields.thirty);
+        } else if (size === "60x60") {
+          setOptions([...ocean.fields.thirty, ...ocean.fields.sixty]);
+        } else if (size === "90x90") {
+          setOptions([
+            ...ocean.fields.thirty,
+            ...ocean.fields.sixty,
+            ...ocean.fields.ninety,
+          ]);
+        }
       }
     }
-    console.log(options);
-    console.log(poi);
-    poi = [];
-    console.log(poi);
   };
   // useEffect(() => {
   //   runArea(area);
