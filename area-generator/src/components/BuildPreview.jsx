@@ -82,6 +82,12 @@ export default function BuildPreview(props) {
       <h3>
         Area: {area} | Size: {size}
       </h3>
+      <h4>Points of Interest Possibilities:</h4>
+      <h5>
+        {options.map((options) => (
+          <h6>{options}</h6>
+        ))}
+      </h5>
     </article>
   );
 }
