@@ -20,8 +20,6 @@ export default function Gallery() {
     getGallery();
   }, [fetchGallery]);
 
-  console.log(gallery);
-  console.log(";adsfna");
   return (
     <div>
       <div>

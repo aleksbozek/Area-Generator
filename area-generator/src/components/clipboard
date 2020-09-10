@@ -1,0 +1,67 @@
+  console.log(props);
+  const { area, size, desert, woods, urban, ocean } = props;
+  const [options, setOptions] = useState([]);
+  let poi = woods;
+  let cond1 = [];
+  let cond2 = [];
+  let cond3 = [];
+  console.log(poi);
+  useEffect(() => {
+    const runSize = () => {
+      if (size === "30x30" || size === "60x60" || size === "90x90") {
+        runArea(poi);
+      } else {
+        console.log(`size is undefined`);
+      }
+    };
+    runSize();
+  }, [size]);
+
+  useEffect(() => {
+    if (area === "default") {
+      console.log(`area is undefined`);
+    } else {
+      if (area === "desert") {
+        poi = desert;
+      } else if (area === "woods") {
+        poi = woods;
+      } else if (area === "urban") {
+        poi = urban;
+      } else if (area === "ocean") {
+        poi = ocean;
+      }
+    }
+    runArea(poi);
+  }, [area]);
+
+  const runArea = (poi) => {
+    if (poi === "default") {
+      console.log(`area is undefined`);
+    } else if (size == "default") {
+      console.log(`size is undefined`);
+    } else {
+      cond1 = poi.fields.thirty;
+      cond2 = cond1.push(poi.fields.sixty);
+      cond2.flat(1);
+      cond3 = cond2.push(poi.fields.ninety);
+      cond3.flat(1);
+      if (size === "30x30") {
+        setOptions(cond1);
+      } else if (size === "60x60") {
+        setOptions(cond2);
+      } else if (size === "90x90") {
+        setOptions(cond3);
+      }
+    }
+    console.log(options);
+  };
+
+    ------------
+  let num = 1
+    function myFunction() {
+    var x = document.getElementById("mySelect");
+    var c = document.createElement("option");
+    c.text = `Kiwi ${num}`;
+    x.options.add(c, 1);
+    num ++
+  }

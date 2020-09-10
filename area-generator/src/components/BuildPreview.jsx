@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 
 export default function BuildPreview(props) {
-  console.log(props);
+  // console.log(props);
   const { area, size, desert, woods, urban, ocean } = props;
   const [options, setOptions] = useState([]);
   let poi = [];
 
   useEffect(() => {
     const runSize = () => {
-      if (size === "default") {
+      if (size === "" || size === 0) {
         console.log(`size is undefined`);
       } else {
         runArea();
@@ -20,14 +20,11 @@ export default function BuildPreview(props) {
   const runArea = () => {
     poi = [];
     setOptions([]);
-    if (area === "default") {
+    if (area === "" || area === 0) {
       console.log(`area is undefined`);
-    } else if (size === "default") {
-      console.log(`size is undefined`);
     } else {
       if (area === "desert") {
-        setOptions(desert);
-        if (size === "default") {
+        if (size === "" || size === 0) {
           console.log(`size is undefined`);
         } else {
           if (size === "30x30") {
@@ -37,12 +34,14 @@ export default function BuildPreview(props) {
             poi.push(desert.fields.sixty);
             poi = poi.flat(1);
             setOptions(poi);
+            // setOptions(desert.fields.sixty);
           } else if (size === "90x90") {
             poi = desert.fields.thirty;
             poi.push(desert.fields.sixty);
             poi.push(desert.fields.ninety);
             poi = poi.flat(1);
             setOptions(poi);
+            // setOptions(desert.fields.ninety);
           }
         }
       } else if (area === "woods") {
@@ -54,20 +53,14 @@ export default function BuildPreview(props) {
       }
     }
     console.log(options);
+    console.log(poi);
+    poi = [];
+    console.log(poi);
   };
   // useEffect(() => {
   //   runArea(area);
   //   console.log(`point of interest = ${options}`);
   // }, [area]);
-  //------------
-  // let num = 1
-  //   function myFunction() {
-  //   var x = document.getElementById("mySelect");
-  //   var c = document.createElement("option");
-  //   c.text = `Kiwi ${num}`;
-  //   x.options.add(c, 1);
-  //   num ++
-  // }
 
   return (
     <article>

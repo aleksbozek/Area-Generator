@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../App.css";
+// import HomePageSample from "./HomePageSample.jsx";
 
 export default function HomePage() {
   const [examples, setExamples] = useState([]);
+  let idx = 0;
+  let sample = {
+    size: "",
+    type: "",
+    att: "",
+  };
 
   useEffect(() => {
     // const airURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/Build?Grid%20View`
@@ -17,43 +24,37 @@ export default function HomePage() {
 
       console.log(res.data.records);
       setExamples(res.data.records);
+      console.log(examples);
     };
     getInfo();
-    console.log("mounted successfully");
+    // console.log("mounted successfully");
+    console.log(examples);
   }, []);
 
-  // function getRandom() {
-  //   const index = Math.floor(Math.random() * examples.length);
-
-  //   return index;
-  // }
-
-  // const showExamples = (ex) => {
-  //   const index = getRandom();
-  //   console.log(ex);
-  //   let sample = {
-  //     size: "",
-  //     type: "",
-  //     att: "",
-  //   };
-  //   sample.size = ex[index].fields.Size;
-  //   sample.type = ex[index].fields.Type;
-  //   sample.att = ex[index].fields.AssignedAttributes;
-  //   return sample;
-  // };
-
-  // let sample = showExamples(examples);
+  useEffect(() => {
+    console.log(examples);
+    const grabSample = async (ex) => {
+      console.log(ex);
+      idx = Math.floor(Math.random() * ex.length);
+      console.log(idx);
+      console.log(examples[idx]);
+      // sample.size = examples[idx].fields.Size;
+      // sample.type = examples[idx].fields.Type;
+      // sample.att = examples[idx].fields.AssignedAttributes;
+      console.log(sample);
+    };
+    grabSample(examples);
+  }, [examples]);
 
   return (
     <div>
-      Stuff will go here
-      <h2>Sample From Gallery</h2>
-      <h4>Type: </h4>
-      {/* <h1>{sample.type}</h1> */}
-      <h4>Size: </h4>
-      {/* <h1>{sample.size}</h1> */}
-      <h5>Points Of Interest: </h5>
-      {/* <h1>{sample.att}</h1> */}
+      Grab example from HomePageSample
+      <br />
+      use Gallery and ShowGallery as a reference
+      <br />
+      add a random gen to grab one as an example.
+      <br />
+      {/* <HomePageSample list={examples} /> */}
     </div>
   );
 }
