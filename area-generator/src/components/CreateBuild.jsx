@@ -6,6 +6,7 @@ const CreateBuild = (props) => {
   // const [text, setText] = useState("");
   // const [author, setAuthor] = useState("Philip J Fry");
   const { AssignedAttributes, Type, Size, Title } = props;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -28,15 +29,30 @@ const CreateBuild = (props) => {
         },
       }
     );
-    // props.Size("");
-    // props.Title("");
-    // props.AssignedAttributes([]);
-    // props.Type("");
+    fields.Size("");
+    fields.Title("");
+    fields.AssignedAttributes([]);
+    fields.Type("");
+    alert.show(``);
+  };
+  let gLink = ``;
+  const alertTest = (e) => {
+    e.preventDefault();
+    console.log(`alert test`);
+    gLink = `http://localhost:3000/Gallery`;
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <button type="submit">Run the random gen!</button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <button type="submit">Run the random gen!</button>
+      </form>
+      <br />
+      <p>{gLink}</p>
+      <br />
+      <form onSubmit={alertTest}>
+        <button type="submit">Alert Test</button>
+      </form>
+    </>
   );
 };
 

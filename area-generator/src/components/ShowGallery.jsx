@@ -6,7 +6,7 @@ export default function ShowGallery(props) {
   console.log(props);
 
   return (
-    <div>
+    <div className="from-airtable">
       <h4>{Title}</h4>
       <h5>Area Style: </h5>
       <h6>{Type}</h6>

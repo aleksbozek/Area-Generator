@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ShowGallery from "./ShowGallery.jsx";
+import "./gallerystyle.css";
 
 export default function Gallery() {
   const [gallery, setGallery] = useState([]);
@@ -26,14 +27,14 @@ export default function Gallery() {
       </div>
       <div className="review-container">
         {gallery.map((preview) => (
-          <>
+          <div className="box">
             <h4>#{galCount++}</h4>
             <ShowGallery
               preview={preview}
               key={preview.id}
               galCount={galCount}
             />
-          </>
+          </div>
         ))}
       </div>
     </div>
