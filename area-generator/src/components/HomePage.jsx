@@ -35,17 +35,18 @@ export default function HomePage() {
         decides what type of environment they wish to generate as well as how
         large of an area. This will provide them with a rough guideline. There
         will also be input fields for the user to add their own unique flavor
-        into the random gen in case they have a theme to maintain. Admittedly
-        this is geared toward tabletop gaming, however, this is suitable for a
-        broad creative audience seeking inspiration including writers and
-        digital artists!
+        into the random gen in case they have a theme to maintain. <br />
+        <br />
+        Admittedly this is geared toward tabletop gaming, however, this is
+        suitable for a broad creative audience seeking inspiration including
+        writers and digital artists!
       </p>
       <br />
       Grab example from HomePageSample
       <br />
       use Gallery and ShowGallery as a reference
       <br />
-      add a random gen to grab one as an example.
+      add a random gen to grab only one example.
       <br />
       {/* <HomePageSample list={examples} index={idx} /> */}
     </div>
