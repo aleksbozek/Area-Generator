@@ -25,11 +25,11 @@ const CreateBuild = (props) => {
         },
       }
     );
-    fields.Size("");
-    fields.Title("");
-    fields.AssignedAttributes([]);
-    fields.Type("");
-    alert.show(``);
+    fields.Size = "";
+    fields.Title = "";
+    fields.AssignedAttributes = [];
+    fields.Type = "";
+    // alert(``);
   };
   // let gLink = ``;
   // const alertTest = (e) => {
