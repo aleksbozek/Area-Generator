@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const CreateBuild = (props) => {
-  // const [title, setTitle] = useState("");
-  // const [text, setText] = useState("");
-  // const [author, setAuthor] = useState("Philip J Fry");
   const { AssignedAttributes, Type, Size, Title } = props;
 
   const handleSubmit = async (e) => {
@@ -17,7 +14,6 @@ const CreateBuild = (props) => {
       Title,
     };
     fields.AssignedAttributes = fields.AssignedAttributes.join();
-    // const airURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/Gallery`;
     const airURL = `https://api.airtable.com/v0/appT8SRRw9eOl8WmR/Gallery?Grid%20View`;
     await axios.post(
       airURL,
@@ -35,23 +31,23 @@ const CreateBuild = (props) => {
     fields.Type("");
     alert.show(``);
   };
-  let gLink = ``;
-  const alertTest = (e) => {
-    e.preventDefault();
-    console.log(`alert test`);
-    gLink = `http://localhost:3000/Gallery`;
-  };
+  // let gLink = ``;
+  // const alertTest = (e) => {
+  //   e.preventDefault();
+  //   console.log(`alert test`);
+  //   gLink = `http://localhost:3000/Gallery`;
+  // };
   return (
     <>
       <form onSubmit={handleSubmit}>
         <button type="submit">Run the random gen!</button>
       </form>
       <br />
-      <p>{gLink}</p>
+      {/* <p>{gLink}</p> */}
       <br />
-      <form onSubmit={alertTest}>
+      {/* <form onSubmit={alertTest}>
         <button type="submit">Alert Test</button>
-      </form>
+      </form> */}
     </>
   );
 };

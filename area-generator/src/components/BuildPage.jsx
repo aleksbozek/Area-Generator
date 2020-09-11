@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import BuildOptions from "./BuildOptions.jsx";
+// import "./stylez.css";
 
 export default function BuildPage() {
   const [build, setBuild] = useState([]);
 
   useEffect(() => {
-    // const airURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/Build?Grid%20View`
     const airURL = `https://api.airtable.com/v0/appT8SRRw9eOl8WmR/Build?Grid%20View`;
     const getInfo = async () => {
       const res = await axios.get(airURL, {
@@ -17,7 +17,6 @@ export default function BuildPage() {
       setBuild(res.data.records);
     };
     getInfo();
-    console.log("mounted successfully");
   }, []);
 
   return (

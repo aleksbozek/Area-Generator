@@ -7,7 +7,6 @@ export default function Gallery() {
   const [gallery, setGallery] = useState([]);
   let galCount = 1;
   useEffect(() => {
-    console.log("component has mounted");
     const airURL = `https://api.airtable.com/v0/appT8SRRw9eOl8WmR/Gallery?Grid%20View`;
     const getGallery = async () => {
       const res = await axios.get(airURL, {

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import CreateBuild from "./CreateBuild.jsx";
 
 export default function BuildPreview(props) {
-  // console.log(props);
   const { area, size, desert, woods, urban, ocean } = props;
   const [options, setOptions] = useState([]);
   const [title, setTitle] = useState("");

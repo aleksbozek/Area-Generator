@@ -7,7 +7,6 @@ export default function HomePage() {
   const [examples, setExamples] = useState([]);
   let idx = 0;
   useEffect(() => {
-    // const airURL = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/Build?Grid%20View`
     const airURL = `https://api.airtable.com/v0/appT8SRRw9eOl8WmR/Gallery?Grid%20View`;
     const getInfo = async () => {
       const res = await axios.get(airURL, {
