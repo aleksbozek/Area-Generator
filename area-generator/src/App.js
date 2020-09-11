@@ -10,9 +10,15 @@ function App() {
     <div className="App">
       <h1>Area Generator</h1>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/Build">Build</Link>
-        <Link to="/Gallery">Gallery</Link>
+        <Link className="dash" to="/">
+          Home
+        </Link>
+        <Link className="dash" to="/Build">
+          Build
+        </Link>
+        <Link className="dash" to="/Gallery">
+          Gallery
+        </Link>
       </nav>
       <main>
         <Switch>
